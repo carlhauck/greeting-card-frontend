@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react"
+import axios from 'axios';
 
 function CardGenerator() {
   const [state, setState] = useState({
     topText: "",
     bottomText: "",
-    randomImg: "http://i.imgflip.com/1bij.jpg",
+    randomImg: "",
     allMemeImgs: []
   })
 
