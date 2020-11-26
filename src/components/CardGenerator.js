@@ -4,6 +4,8 @@ function CardGenerator() {
   const [state, setState] = useState({
     topText: "",
     bottomText: "",
+    topFont: 'lora',
+    bottomFont: 'mountains',
     randomImg: "http://i.imgflip.com/1bij.jpg",
     allCardImgs: []
   })
@@ -57,8 +59,8 @@ function CardGenerator() {
       </form>
       <div className="meme">
         <img src={state.randomImg} alt="" />
-        <h2 className="top">{state.topText}</h2>
-        <h2 className="bottom">{state.bottomText}</h2>
+        <h2 className={`top ${state.topFont}`}>{state.topText}</h2>
+        <h2 className={`bottom ${state.bottomFont}`}>{state.bottomText}</h2>
       </div>
     </div>
   )

@@ -30,7 +30,7 @@ header > p {
 
 .meme {
   position: relative;
-  width: 90%;
+  width: 75vh;
   margin: auto;
 }
 
@@ -46,9 +46,9 @@ header > p {
   transform: translateX(-50%);
   margin: 15px 0;
   padding: 0 5px;
-  font-family: impact, sans-serif;
+  /* font-family: impact, sans-serif; */
   font-size: 2em;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: white;
   letter-spacing: 1px;
   text-shadow:

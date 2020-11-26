@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Lora-Regular";
+  src: url("./fonts/Lora-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MountainsofChristmas-Bold";
+  src: url("./fonts/MountainsofChristmas-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.lora {
+  font-family: "Lora-Regular";
+}
+
+.mountains {
+  font-family: "MountainsofChristmas-Bold";
+}
