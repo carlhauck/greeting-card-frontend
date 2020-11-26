@@ -5,18 +5,18 @@ function CardGenerator() {
     topText: "",
     bottomText: "",
     randomImg: "http://i.imgflip.com/1bij.jpg",
-    allMemeImgs: []
+    allCardImgs: []
   })
 
   useEffect(() => {
-    fetch("https://api.imgflip.com/get_memes")
+    fetch("http://localhost:3000/images")
       .then(response => response.json())
       .then(response => {
-        const { memes } = response.data
-        setState({
+        const images = response
+        setState(state => ({
           ...state,
-          allMemeImgs: memes
-        });
+          allCardImgs: images
+        }));
       })
   }, [])
 
@@ -30,9 +30,9 @@ function CardGenerator() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    const randNum = Math.floor(Math.random() * state.allMemeImgs.length)
-    const randMemeImg = state.allMemeImgs[randNum].url
-    setState({ ...state, randomImg: randMemeImg })
+    const randNum = Math.floor(Math.random() * state.allCardImgs.length)
+    const randCardImg = state.allCardImgs[randNum].url
+    setState({ ...state, randomImg: randCardImg })
   }
 
   return (
