@@ -12,10 +12,93 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Poppins-Black";
+  src: url("./fonts/Poppins-Black.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("./fonts/Poppins-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-ExtraBold";
+  src: url("./fonts/Poppins-ExtraBold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-ExtraLight";
+  src: url("./fonts/Poppins-ExtraLight.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-Light";
+  src: url("./fonts/Poppins-Light.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-Medium";
+  src: url("./fonts/Poppins-Medium.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("./fonts/Poppins-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("./fonts/Poppins-SemiBold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-Thin";
+  src: url("./fonts/Poppins-Thin.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .lora {
   font-family: "Lora-Regular";
 }
 
 .mountains {
   font-family: "MountainsofChristmas-Bold";
+}
+
+.poppins-100 {
+  font-family: "Poppins-Thin";
+}
+.poppins-200 {
+  font-family: "Poppins-ExtraLight";
+}
+.poppins-300 {
+  font-family: "Poppins-Light";
+}
+.poppins-400 {
+  font-family: "Poppins-Regular";
+}
+.poppins-500 {
+  font-family: "Poppins-Medium";
+}
+.poppins-600 {
+  font-family: "Poppins-SemiBold";
+}
+.poppins-700 {
+  font-family: "Poppins-Bold";
+}
+.poppins-800 {
+  font-family: "Poppins-ExtraBold";
+}
+.poppins-900 {
+  font-family: "Poppins-Black";
 }
