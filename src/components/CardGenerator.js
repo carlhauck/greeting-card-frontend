@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react"
 function CardGenerator() {
   const [state, setState] = useState({
     topText: "",
-    bottomText: "",
     topFont: 'lora',
+    topFontColor: '#ffffff',
+    bottomText: "",
     bottomFont: 'mountains',
+    bottomFontColor: '#ffffff',
     randomImg: "http://i.imgflip.com/1bij.jpg",
     allCardImgs: []
   })
@@ -47,6 +49,15 @@ function CardGenerator() {
           value={state.topText}
           onChange={handleChange}
         />
+        <label for="topFont">Choose a top font:</label>
+        <select name="topFont" id="topFont" value={state.topFont} onChange={handleChange}>
+          <option value="lora">Lora</option>
+          <option value="mountains">Mountains of Christmas</option>
+        </select>
+        <input type="color" id="topFontColor" name="topFontColor"
+          value={state.topFontColor} onChange={handleChange} />
+        <label for="topFontColor">Top Font Color</label>
+
         <input
           type="text"
           name="bottomText"
@@ -54,13 +65,21 @@ function CardGenerator() {
           value={state.bottomText}
           onChange={handleChange}
         />
+        <label for="bottomFont">Choose a bottom font:</label>
+        <select name="bottomFont" id="bottomFont" value={state.bottomFont} onChange={handleChange}>
+          <option value="lora">Lora</option>
+          <option value="mountains">Mountains of Christmas</option>
+        </select>
+        <input type="color" id="bottomFontColor" name="bottomFontColor"
+          value={state.bottomFontColor} onChange={handleChange} />
+        <label for="bottomFontColor">Bottom Font Color</label>
 
         <button>Gen</button>
       </form>
       <div className="meme">
         <img src={state.randomImg} alt="" />
-        <h2 className={`top ${state.topFont}`}>{state.topText}</h2>
-        <h2 className={`bottom ${state.bottomFont}`}>{state.bottomText}</h2>
+        <h2 className={`top ${state.topFont}`} style={{ color: `${state.topFontColor}` }}>{state.topText}</h2>
+        <h2 className={`bottom ${state.bottomFont}`} style={{ color: `${state.bottomFontColor}` }}>{state.bottomText}</h2>
       </div>
     </div>
   )
