@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -25,13 +27,13 @@ header > p {
   /* font-family: VT323, monospace; */
   /* color: whitesmoke; */
   color: #A168D8;
-  font-size: 40px;
+  font-size: 42px;
   margin-left: 60px;
 }
 
 .meme {
   position: relative;
-  width: 75vh;
+  width: 80vh;
   margin: auto;
 }
 
@@ -84,15 +86,6 @@ header > p {
   height: 40px;
 }
 
-.meme-form > button {
-  border: none;
-  font-family: VT323, monospace;
-  font-size: 25px;
-  letter-spacing: 1.5px;
-  color: white;
-  background: #6441A5;
-}
-
 .meme-form > input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 font-family: VT323, monospace;
 font-size: 25px;
@@ -112,4 +105,66 @@ text-align: cen
 font-family: VT323, monospace;
 font-size: 25px;
 text-align: cen
+}
+
+
+select {
+  /* A reset of styles, including removing the default dropdown arrow */
+  appearance: none;
+  /* Additional resets for further consistency */
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+  color: #FF688B;
+  font-family: 'Poppins-Light';
+}
+
+.section-header {
+  display: block;
+  font-family: 'Poppins-Bold';
+  font-size: 1.4em;
+  color: #30659B;
+}
+
+button.img-button {
+  display: block;
+  border: none;
+  background-color: #FFEEEE;
+  border-radius: 4px;
+  padding: 1em;
+}
+
+button.img-button:hover {
+  background-color: #fff5f5;
+}
+
+button.img-button:active {
+  outline: none;
+}
+
+button.img-button svg g, button.img-button svg polygon {
+  fill: #FF688B;
+  stroke: #FF688B;
+}
+
+button.img-button svg path {
+  stroke: #FF688B;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 3fr 6fr 3fr;
+  justify-items: center;
+}
+
+.item {
+  width: 50%;
+  height: 50%;
 }
