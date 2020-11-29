@@ -7,9 +7,11 @@ function CardGenerator() {
     topText: "",
     topFont: 'lora',
     topFontColor: '#ffffff',
+    topFontSize: "60px",
     bottomText: "",
     bottomFont: 'mountains',
     bottomFontColor: '#ffffff',
+    bottomFontSize: "120px",
     randomImg: "http://i.imgflip.com/1bij.jpg",
     allCardImgs: []
   })
@@ -28,10 +30,13 @@ function CardGenerator() {
 
   function handleChange(e) {
     const value = e.target.value;
+    console.log(e.target.value);
+    console.log(e.target);
     setState({
       ...state,
       [e.target.name]: value
     });
+
   }
 
   function handleSubmit(e) {
@@ -54,8 +59,8 @@ function CardGenerator() {
 
       <div className="meme">
         <img src={state.randomImg} alt="" />
-        <h2 className={`top ${state.topFont}`} style={{ color: `${state.topFontColor}` }}>{state.topText}</h2>
-        <h2 className={`bottom ${state.bottomFont}`} style={{ color: `${state.bottomFontColor}` }}>{state.bottomText}</h2>
+        <h2 className={`top ${state.topFont}`} style={{ color: `${state.topFontColor}`, fontSize: `${state.topFontSize}` }}>{state.topText}</h2>
+        <h2 className={`bottom ${state.bottomFont}`} style={{ color: `${state.bottomFontColor}`, fontSize: `${state.bottomFontSize}` }}>{state.bottomText}</h2>
       </div>
 
       <div className="item">
@@ -65,6 +70,7 @@ function CardGenerator() {
           text={state.topText}
           font={state.topFont}
           fontColor={state.topFontColor}
+          fontSize={state.topFontSize}
           handleChange={handleChange} />
 
         <TextEditor
@@ -72,6 +78,7 @@ function CardGenerator() {
           text={state.bottomText}
           font={state.bottomFont}
           fontColor={state.bottomFontColor}
+          fontSize={state.bottomFontSize}
           handleChange={handleChange} />
       </div>
 
