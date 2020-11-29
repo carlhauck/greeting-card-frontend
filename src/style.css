@@ -116,21 +116,23 @@ select {
   border: none;
   padding: 0 1em 0 0;
   margin: 0;
-  width: 100%;
+  width: 100px;
   font-family: inherit;
   font-size: inherit;
   cursor: inherit;
   line-height: inherit;
   outline: none;
   color: #FF688B;
-  font-family: 'Poppins-Light';
+  font-family: 'Poppins-Regular';
+  position: relative;
 }
 
 .section-header {
   display: block;
   font-family: 'Poppins-Bold';
-  font-size: 1.4em;
+  font-size: 1.5em;
   color: #30659B;
+  margin: 0 0 0.5em 0;
 }
 
 button.img-button {
@@ -160,11 +162,26 @@ button.img-button svg path {
 
 .container {
   display: grid;
-  grid-template-columns: 3fr 6fr 3fr;
-  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr 2fr 1fr;
+  column-gap: 2rem;
 }
 
 .item {
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
+  justify-items: center;
 }
+
+.text-editor {
+  margin-bottom: 1.5em;
+}
+
+.text-editor-label {
+  text-transform: uppercase;
+  font-family: 'Poppins-SemiBold';
+  font-size: 0.8em;
+  color: #30659B;
+  margin: 0 0 0.5em 0;
+}
+

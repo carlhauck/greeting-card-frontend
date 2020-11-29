@@ -11,7 +11,7 @@ function CardGenerator() {
     bottomText: "",
     bottomFont: 'mountains',
     bottomFontColor: '#ffffff',
-    bottomFontSize: "120px",
+    bottomFontSize: "60px",
     randomImg: "http://i.imgflip.com/1bij.jpg",
     allCardImgs: []
   })
@@ -57,7 +57,7 @@ function CardGenerator() {
         </form>
       </div>
 
-      <div className="meme">
+      <div className="item meme">
         <img src={state.randomImg} alt="" />
         <h2 className={`top ${state.topFont}`} style={{ color: `${state.topFontColor}`, fontSize: `${state.topFontSize}` }}>{state.topText}</h2>
         <h2 className={`bottom ${state.bottomFont}`} style={{ color: `${state.bottomFontColor}`, fontSize: `${state.bottomFontSize}` }}>{state.bottomText}</h2>
@@ -67,6 +67,7 @@ function CardGenerator() {
         <p className="section-header">text</p>
         <TextEditor
           locationY="top"
+          label="upper"
           text={state.topText}
           font={state.topFont}
           fontColor={state.topFontColor}
@@ -75,6 +76,7 @@ function CardGenerator() {
 
         <TextEditor
           locationY="bottom"
+          label="lower"
           text={state.bottomText}
           font={state.bottomFont}
           fontColor={state.bottomFontColor}
