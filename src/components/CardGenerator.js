@@ -39,7 +39,7 @@ function CardGenerator() {
 
   }
 
-  function handleSubmit(e) {
+  function handleImgChange(e) {
     e.preventDefault()
     const randNum = Math.floor(Math.random() * state.allCardImgs.length)
     const randCardImg = state.allCardImgs[randNum].url
@@ -51,14 +51,20 @@ function CardGenerator() {
       <div className="item" style={{ justifyItems: "center" }}>
         <p className="section-header">image</p>
         <form className="meme-form" onSubmit={handleSubmit}>
-          <button className="img-button">
+          <button type="button" className="img-button" onClick="handleImgChange">
             <IconRotate />
+          </button>
+          <button className="img-button">
+            DL
           </button>
         </form>
       </div>
 
       <div className="item meme">
-        <img src={state.randomImg} alt="" />
+        <canvas id="canvas" width="1024" height="1024">
+          Canvas requires a browser that supports HTML5.
+        </canvas>
+        <img crossOrigin="Anonymous" src={state.randomImg} alt="" />
         <h2 className={`top ${state.topFont}`} style={{ color: `${state.topFontColor}`, fontSize: `${state.topFontSize}` }}>{state.topText}</h2>
         <h2 className={`bottom ${state.bottomFont}`} style={{ color: `${state.bottomFontColor}`, fontSize: `${state.bottomFontSize}` }}>{state.bottomText}</h2>
       </div>
