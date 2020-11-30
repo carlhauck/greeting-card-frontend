@@ -66,6 +66,26 @@ function CardGenerator() {
       'mountains': "MountainsofChristmas-Bold"
     }
 
+    // Handles text wrap
+    function getLines(ctx, text, maxWidth) {
+      var words = text.split(" ");
+      var lines = [];
+      var currentLine = words[0];
+
+      for (var i = 1; i < words.length; i++) {
+        var word = words[i];
+        var width = ctx.measureText(currentLine + " " + word).width;
+        if (width < maxWidth) {
+          currentLine += " " + word;
+        } else {
+          lines.push(currentLine);
+          currentLine = word;
+        }
+      }
+      lines.push(currentLine);
+      return lines;
+    }
+
     let image = document.getElementById('card-image');
 
     let canvas = document.getElementById('card-canvas');
@@ -93,8 +113,12 @@ function CardGenerator() {
     ctx.strokeStyle = "black";
     ctx.lineWidth = 6;
     ctx.translate(0, topTextRect.top - canvasRect.top + 15) // additional 15px for h2 margin
-    ctx.strokeText(`${state.topText}`, (canvas.width / 2), 0);
-    ctx.fillText(`${state.topText}`, (canvas.width / 2), 0);
+    let linesTop = getLines(ctx, state.topText, (canvas.width * 0.8) - 10); // 80% width and 5px padding on sides
+    linesTop.forEach(function (line, i) {
+      console.log(line);
+      ctx.strokeText(line, (canvas.width / 2), (Number(state.topFontSize.substring(0, state.topFontSize.length - 2)) + 15) * i);
+      ctx.fillText(line, (canvas.width / 2), (Number(state.topFontSize.substring(0, state.topFontSize.length - 2)) + 15) * i);
+    });
 
     // Draws bottom text
     ctx.font = `${state.bottomFontSize} ${fonts[state.bottomFont]}`;
@@ -104,8 +128,12 @@ function CardGenerator() {
     ctx.strokeStyle = "black";
     ctx.lineWidth = 6;
     ctx.translate(0, bottomTextRect.top - topTextRect.top) // Y offset between two pieces of text; starts at previous translate point
-    ctx.strokeText(`${state.bottomText}`, (canvas.width / 2), 0);
-    ctx.fillText(`${state.bottomText}`, (canvas.width / 2), 0);
+    let linesBottom = getLines(ctx, state.bottomText, (canvas.width * 0.8) - 10);
+    linesBottom.forEach(function (line, i) {
+      console.log(line);
+      ctx.strokeText(line, (canvas.width / 2), (Number(state.bottomFontSize.substring(0, state.bottomFontSize.length - 2)) + 15) * i);
+      ctx.fillText(line, (canvas.width / 2), (Number(state.bottomFontSize.substring(0, state.bottomFontSize.length - 2)) + 15) * i);
+    });
 
     // Downloads canvas
     console.dir(canvas);
