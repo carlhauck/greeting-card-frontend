@@ -61,35 +61,61 @@ function CardGenerator() {
 
   async function downloadImg(e) {
 
-    let image = document.getElementById('card-image');
-    let imageRect = image.getBoundingClientRect();
+    const fonts = {
+      'lora': "Lora-Regular",
+      'mountains': "MountainsofChristmas-Bold"
+    }
 
-    let topText = document.getElementById('top-text');
-    let topTextRect = topText.getBoundingClientRect();
+    let image = document.getElementById('card-image');
 
     let canvas = document.getElementById('card-canvas');
     let canvasRect = canvas.getBoundingClientRect();
 
-    let ctx = canvas.getContext("2d");
-    ctx.width = imageRect.width;
-    ctx.height = imageRect.height;
-    ctx.drawImage(image, 0, 0, canvasRect.width, canvasRect.height);
+    let topText = document.getElementById('top-text');
+    let topTextRect = topText.getBoundingClientRect();
 
-    let fontName
-    state.topFont === 'lora' ? fontName = "Lora-Regular" : fontName = "MountainsofChristmas-Bold";
-    ctx.font = `${state.topFontSize} ${fontName}`;
+    let bottomText = document.getElementById('bottom-text');
+    let bottomTextRect = bottomText.getBoundingClientRect();
+
+    // Sets context
+    let ctx = canvas.getContext("2d");
+    ctx.width = canvas.width;
+    ctx.height = canvas.height;
+
+    // Draws image
+    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+    // Draws top text
+    ctx.font = `${state.topFontSize} ${fonts[state.topFont]}`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
+    ctx.fillStyle = `${state.topFontColor}`;
     ctx.strokeStyle = "black";
     ctx.lineWidth = 6;
-    ctx.strokeText(`${state.topText}`, (canvasRect.width / 2), (topTextRect.top - canvasRect.top));
-    ctx.fillStyle = `${state.topFontColor}`;
-    ctx.fillText(`${state.topText}`, (canvasRect.width / 2), (topTextRect.top - canvasRect.top));
+    ctx.translate(0, topTextRect.top - canvasRect.top + 15) // additional 15px for h2 margin
+    ctx.strokeText(`${state.topText}`, (canvas.width / 2), 0);
+    ctx.fillText(`${state.topText}`, (canvas.width / 2), 0);
 
+    // Draws bottom text
+    ctx.font = `${state.bottomFontSize} ${fonts[state.bottomFont]}`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'top';
+    ctx.fillStyle = `${state.bottomFontColor}`;
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 6;
+    ctx.translate(0, bottomTextRect.top - topTextRect.top) // Y offset between two pieces of text; starts at previous translate point
+    ctx.strokeText(`${state.bottomText}`, (canvas.width / 2), 0);
+    ctx.fillText(`${state.bottomText}`, (canvas.width / 2), 0);
+
+    // Downloads canvas
     console.dir(canvas);
     let download = document.getElementById("download");
     let imageDl = canvas.toDataURL("image/png");
     download.setAttribute("href", imageDl);
+
+    // Clears canvas
+    ctx.translate(0, -(bottomTextRect.top - canvasRect.top + 15)) // resets Y translate to OG point (I think?)
+    ctx.clearRect(0, 0, canvasRect.width, canvasRect.height);
 
   }
 
