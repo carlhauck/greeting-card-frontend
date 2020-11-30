@@ -34,7 +34,7 @@ function TextEditor(props) {
 
       {/* font select */}
       <div>
-        <label for={locationY + "Font"}>
+        <label htmlFor={locationY + "Font"}>
           <IconFont />
         </label>
         <select
@@ -49,7 +49,7 @@ function TextEditor(props) {
 
       {/* color select */}
       <div>
-        <label for={locationY + "FontColor"}>
+        <label htmlFor={locationY + "FontColor"}>
           <IconColor />
         </label>
         <input
@@ -62,7 +62,7 @@ function TextEditor(props) {
 
       {/* size select */}
       <div>
-        <label for={locationY + "FontSize"}>
+        <label htmlFor={locationY + "FontSize"}>
           <IconFontSize /> {props.fontSize}
         </label>
         <button
