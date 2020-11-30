@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import TextEditor from "./TextEditor"
 import IconRotate from "./IconRotate"
+import IconDownload from "./IconDownload"
 
 function CardGenerator() {
   const [state, setState] = useState({
@@ -12,7 +13,7 @@ function CardGenerator() {
     bottomFont: 'mountains',
     bottomFontColor: '#ffffff',
     bottomFontSize: "60px",
-    randomImg: "http://i.imgflip.com/1bij.jpg",
+    randomImg: "",
     allCardImgs: []
   })
 
@@ -23,7 +24,8 @@ function CardGenerator() {
         const images = response
         setState(state => ({
           ...state,
-          allCardImgs: images
+          allCardImgs: images,
+          randomImg: images[0].url
         }));
       })
   }, [])
@@ -50,20 +52,20 @@ function CardGenerator() {
     <div className="container">
       <div className="item" style={{ justifyItems: "center" }}>
         <p className="section-header">image</p>
-        <form className="meme-form" onSubmit={handleSubmit}>
-          <button type="button" className="img-button" onClick="handleImgChange">
+        <form className="meme-form">
+          <button type="button" className="img-button" onClick={handleImgChange}>
             <IconRotate />
           </button>
           <button className="img-button">
-            DL
+            <IconDownload />
           </button>
         </form>
       </div>
 
       <div className="item meme">
-        <canvas id="canvas" width="1024" height="1024">
+        {/* <canvas id="img-canvas">
           Canvas requires a browser that supports HTML5.
-        </canvas>
+        </canvas> */}
         <img crossOrigin="Anonymous" src={state.randomImg} alt="" />
         <h2 className={`top ${state.topFont}`} style={{ color: `${state.topFontColor}`, fontSize: `${state.topFontSize}` }}>{state.topText}</h2>
         <h2 className={`bottom ${state.bottomFont}`} style={{ color: `${state.bottomFontColor}`, fontSize: `${state.bottomFontSize}` }}>{state.bottomText}</h2>

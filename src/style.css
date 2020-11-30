@@ -185,3 +185,11 @@ button.img-button svg path {
   margin: 0 0 0.5em 0;
 }
 
+/* #img-canvas {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%), translateY(-50%);
+} */
