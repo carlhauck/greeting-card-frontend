@@ -27,7 +27,7 @@ function Home() {
   const images = state.allCardImgs.map(i => {
     const id = i.id
     return (
-      <img src={i.url} id={id} height="200" width="200"/>
+      <img src={i.url} id={id} height="150" width="150"/>
     )
   })
   
@@ -35,7 +35,7 @@ function Home() {
   function handleClick(e) {
     console.log(e.target.currentSrc)
 
-    e.preventDefault();
+    // e.preventDefault();
     console.log('The link was clicked.');
   }
 
@@ -55,5 +55,5 @@ export default Home;
 
 
 //////////////////////////////////  START ON LINE 47  ///////////////////////////////////////////////
-// #1 WHY IS NAV NOT GOING TO "Greting Card" Page? 
+// #1 WHY IS NAV NOT GOING TO "Greting Card" Page? due to previos prevent defualt()
 // #2 Restate img to show on Greeting Card Page to reflect what which image was clicked on HOME page as seen in Function HandleClick console.log
