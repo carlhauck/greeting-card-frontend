@@ -25,7 +25,7 @@ function TextEditor(props) {
       <div>
         <input
           type="text"
-          class="text-edit-field"
+          className="text-edit-field"
           name={locationY + "Text"}
           placeholder={locationY + " text"}
           value={props.text}
@@ -57,7 +57,7 @@ function TextEditor(props) {
         <input
           type="color"
           style={{ marginLeft: 10 }}
-          class="color-input"
+          className="color-input"
           id={locationY + "FontColor"}
           name={locationY + "FontColor"}
           value={props.fontColor}
@@ -65,7 +65,7 @@ function TextEditor(props) {
       </div>
 
       {/* size select */}
-      <div class="size-selector">
+      <div className="size-selector">
         <label style={{ color: "#30659B" }} htmlFor={locationY + "FontSize"}>
           <IconFontSize /> {props.fontSize}
         </label>
