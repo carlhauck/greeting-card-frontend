@@ -54,6 +54,7 @@ function CardGenerator() {
 
   function handleImgChange(e) {
     e.preventDefault()
+    console.log(state.allCardImgs)
     const randNum = Math.floor(Math.random() * state.allCardImgs.length)
     const randCardImg = state.allCardImgs[randNum].url
     setState({ ...state, randomImg: randCardImg })
