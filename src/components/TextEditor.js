@@ -25,6 +25,7 @@ function TextEditor(props) {
       <div>
         <input
           type="text"
+          className="text-edit-field"
           name={locationY + "Text"}
           placeholder={locationY + " text"}
           value={props.text}
@@ -40,6 +41,7 @@ function TextEditor(props) {
         <select
           name={locationY + "Font"}
           id={locationY + "Font"}
+          style={{ marginLeft: 10 }}
           value={props.font}
           onChange={props.handleChange}>
           <option value="lora">Lora</option>
@@ -54,6 +56,8 @@ function TextEditor(props) {
         </label>
         <input
           type="color"
+          style={{ marginLeft: 10 }}
+          className="color-input"
           id={locationY + "FontColor"}
           name={locationY + "FontColor"}
           value={props.fontColor}
@@ -61,11 +65,12 @@ function TextEditor(props) {
       </div>
 
       {/* size select */}
-      <div>
-        <label htmlFor={locationY + "FontSize"}>
+      <div className="size-selector">
+        <label style={{ color: "#30659B" }} htmlFor={locationY + "FontSize"}>
           <IconFontSize /> {props.fontSize}
         </label>
         <button
+          style={{ marginLeft: 10 }}
           type="button"
           name={locationY + "FontSize"}
           value={decrementedSize}

@@ -114,7 +114,7 @@ select {
   border: none;
   padding: 0 1em 0 0;
   margin: 0;
-  width: 100px;
+  width: 190px;
   font-family: inherit;
   font-size: inherit;
   cursor: inherit;
@@ -123,6 +123,11 @@ select {
   color: #FF688B;
   font-family: 'Poppins-Regular';
   position: relative;
+}
+
+
+select[multiple] option {
+  background-color: darkorange;
 }
 
 .section-header {
@@ -172,7 +177,12 @@ button.img-button svg path {
 }
 
 .text-editor {
-  margin-bottom: 1.5em;
+  margin-bottom: 2.5em;
+  
+}
+
+.text-editor > * {
+  margin-bottom: 1em;
 }
 
 .text-editor-label {
@@ -181,6 +191,51 @@ button.img-button svg path {
   font-size: 0.8em;
   color: #30659B;
   margin: 0 0 0.5em 0;
+}
+
+.text-editor input, 
+.text-editor select {
+  font-family: "Nunito-Regular";
+}
+
+.text-edit-field {
+  width: 250px;
+}
+
+.text-editor input {
+  border-radius: 3px;
+  border: 0;
+}
+
+input[type="text"] {
+  padding: 10px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border-radius: 3px;
+  border: 0;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.size-selector > label{
+  font-family: "Nunito-Regular";
+}
+
+.size-selector > button {
+  border: none;
+  background-color: #FFEEEE;
+  border-radius: 4px;
+  margin: 0 3px 0 0;
+  padding: 0.5em;
+  color: #30659B;
+}
+
+.size-selector > button:hover {
+  background-color: #ffdede;
+ 
 }
 
 /* #img-canvas {
