@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react"
 import TextEditor from "./TextEditor"
 import IconRotate from "./IconRotate"
 import IconDownload from "./IconDownload"
-import Home from "./Home"
 
 function CardGenerator() {
   const [state, setState] = useState({
@@ -25,18 +24,27 @@ function CardGenerator() {
       .then(response => response.json())
       .then(response => {
         const images = response
+        let selectedImg
+        if (localStorage.getItem('img')) {
+          selectedImg = localStorage.getItem('img');
+        } else {
+          let randNum = Math.floor(Math.random() * images.length)
+          selectedImg = images[randNum].url;
+        }
         setState(state => ({
           ...state,
           allCardImgs: images,
-          randomImg: images[0].url
+          randomImg: selectedImg
         }));
       })
+      .then(() =>
+        localStorage.removeItem('img')
+      );
   }, [])
 
   const cardImg = useRef()
   const cardCanvas = useRef()
-  console.log(localStorage.getItem('img'))
-  
+
   useEffect(() => {
     setState(state => ({
       ...state,
@@ -58,7 +66,6 @@ function CardGenerator() {
 
   function handleImgChange(e) {
     e.preventDefault()
-    console.log(state.allCardImgs)
     const randNum = Math.floor(Math.random() * state.allCardImgs.length)
     const randCardImg = state.allCardImgs[randNum].url
     setState({ ...state, randomImg: randCardImg })
@@ -120,7 +127,6 @@ function CardGenerator() {
     ctx.translate(0, topTextRect.top - canvasRect.top + 15) // additional 15px for h2 margin
     let linesTop = getLines(ctx, state.topText, (canvas.width * 0.8) - 10); // 80% width and 5px padding on sides
     linesTop.forEach(function (line, i) {
-      console.log(line);
       ctx.strokeText(line, (canvas.width / 2), (Number(state.topFontSize.substring(0, state.topFontSize.length - 2)) + 15) * i);
       ctx.fillText(line, (canvas.width / 2), (Number(state.topFontSize.substring(0, state.topFontSize.length - 2)) + 15) * i);
     });
@@ -135,7 +141,6 @@ function CardGenerator() {
     ctx.translate(0, bottomTextRect.top - topTextRect.top) // Y offset between two pieces of text; starts at previous translate point
     let linesBottom = getLines(ctx, state.bottomText, (canvas.width * 0.8) - 10);
     linesBottom.forEach(function (line, i) {
-      console.log(line);
       ctx.strokeText(line, (canvas.width / 2), (Number(state.bottomFontSize.substring(0, state.bottomFontSize.length - 2)) + 15) * i);
       ctx.fillText(line, (canvas.width / 2), (Number(state.bottomFontSize.substring(0, state.bottomFontSize.length - 2)) + 15) * i);
     });

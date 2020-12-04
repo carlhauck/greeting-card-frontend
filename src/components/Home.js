@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from "react"
 import { NavLink } from 'react-router-dom';
- 
+
 
 function Home() {
   const [state, setState] = useState({
@@ -22,69 +22,122 @@ function Home() {
       })
   }, [])
 
-  
-
-  console.log("state.allCardImgs: ")
-  console.log(state.allCardImgs)
-  // XMAS cards
-  const imagesChristmas = state.allCardImgs.map(i => {
+  // Animals cards
+  const imagesAnimals = state.allCardImgs.map(i => {
     let img = ''
-    if (i.category === "Christmas"){
-        img = <img src={i.url} alt="xmasCard" id={i.id} height="150" width="150" />
+    if (i.category === "animals") {
+      return (
+        img = <img src={i.url} alt="animalCard" key={i.id} id={i.id} height="250" width="200" />
+      )
     }
-    return(
+    return (
       img
     )
   })
   // Birthday cards
   const imagesBirthday = state.allCardImgs.map(i => {
     let img = ''
-    if (i.category === "Birthday"){
-      return(
-        img = <img src={i.url} alt="birtdayCard" id={i.id} height="150" width="150" />
+    if (i.category === "birthday") {
+      return (
+        img = <img src={i.url} alt="birthdayCard" key={i.id} id={i.id} height="250" width="200" />
       )
     }
-    return(
+    return (
+      img
+    )
+  })
+  // Christmas cards
+  const imagesChristmas = state.allCardImgs.map(i => {
+    let img = ''
+    if (i.category === "christmas") {
+      img = <img src={i.url} alt="christmasCard" key={i.id} id={i.id} height="250" width="200" />
+    }
+    return (
+      img
+    )
+  })
+  // Easter cards
+  const imagesEaster = state.allCardImgs.map(i => {
+    let img = ''
+    if (i.category === "easter") {
+      img = <img src={i.url} alt="easterCard" key={i.id} id={i.id} height="250" width="200" />
+    }
+    return (
+      img
+    )
+  })
+  // Other cards
+  const imagesOther = state.allCardImgs.map(i => {
+    let img = ''
+    if (i.category === "other") {
+      img = <img src={i.url} alt="otherCard" key={i.id} id={i.id} height="250" width="200" />
+    }
+    return (
+      img
+    )
+  })
+  // Sympathy cards
+  const imagesSympathy = state.allCardImgs.map(i => {
+    let img = ''
+    if (i.category === "sympathy") {
+      img = <img src={i.url} alt="sympathyCard" key={i.id} id={i.id} height="250" width="200" />
+    }
+    return (
       img
     )
   })
 
-  
+
   //Store img selected in LOCALSTORAGE
   //Does not work
   function handleClick(e) {
-    console.log(e.target.currentSrc)
-    let imgurl = e.target.currentSrc
-    let imgurl1 = JSON.stringify(imgurl)
-    let img2 = JSON.parse(imgurl1)
-    localStorage.setItem = ("img", img2)
+    localStorage.setItem("img", e.target.src)
   }
 
 
 
 
   return (
-    <div class="centerDiv">
-      &nbsp;
-      &nbsp;
-      <h3>Christmas Caring</h3>
-      <div class="column" id="Christmas">
-        <div class="row">
+    <div className="container-home">
+      <h3>Animals</h3>
+      <div className="category-section" id="Birthday">
+        <div className="category-row">
+          <NavLink to="/cards" onClick={handleClick} >{imagesAnimals}</NavLink>
+        </div>
+      </div>
+      <h3>Birthday</h3>
+      <div className="category-section" id="Birthday">
+        <div className="category-row">
+          <NavLink to="/cards" onClick={handleClick} >{imagesBirthday}</NavLink>
+        </div>
+      </div>
+      <h3>Christmas</h3>
+      <div className="category-section" id="Christmas">
+        <div className="category-row">
           <NavLink to="/cards" onClick={handleClick}>{imagesChristmas}</NavLink>
         </div>
-      </div>  
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <h3>Birthday Besties</h3>
-      <div class="column" id="Birthday">
-        <div class="row">
-          <NavLink to="/cards" onClick={handleClick} >{imagesBirthday}</NavLink>
+      </div>
+      <h3>Easter</h3>
+      <div className="category-section" id="Easter">
+        <div className="category-row">
+          <NavLink to="/cards" onClick={handleClick}>{imagesEaster}</NavLink>
+        </div>
+      </div>
+      <h3>Sympathy</h3>
+      <div className="category-section" id="Other">
+        <div className="category-row">
+          <NavLink to="/cards" onClick={handleClick}>{imagesSympathy}</NavLink>
+        </div>
+      </div>
+      <h3>Other</h3>
+      <div className="category-section" id="Other">
+        <div className="category-row">
+          <NavLink to="/cards" onClick={handleClick}>{imagesOther}</NavLink>
         </div>
       </div>
     </div>
   );
 }
- 
+
 export default Home;
 
