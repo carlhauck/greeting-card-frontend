@@ -1,4 +1,7 @@
-import React, { useState, useEffect, useRef } from "react"
+//////////////////////////////////  TO DO  ///////////////////////////////////////////////
+// - Display Image on Greeting Card Page to reflect which image was clicked on HOME page
+
+import React, { useState, useEffect } from "react"
 import { NavLink } from 'react-router-dom';
  
 
@@ -14,8 +17,7 @@ function Home() {
         const images = response
         setState(state => ({
           ...state,
-          allCardImgs: images,
-          randomImg: images[0].url
+          allCardImgs: images
         }));
       })
   }, [])
@@ -24,27 +26,60 @@ function Home() {
 
   console.log("state.allCardImgs: ")
   console.log(state.allCardImgs)
-  const images = state.allCardImgs.map(i => {
-    const id = i.id
-    return (
-      <img src={i.url} id={id} height="150" width="150"/>
+  // XMAS cards
+  const imagesChristmas = state.allCardImgs.map(i => {
+    let img = ''
+    if (i.category === "Christmas"){
+        img = <img src={i.url} alt="xmasCard" id={i.id} height="150" width="150" />
+    }
+    return(
+      img
     )
   })
+  // Birthday cards
+  const imagesBirthday = state.allCardImgs.map(i => {
+    let img = ''
+    if (i.category === "Birthday"){
+      return(
+        img = <img src={i.url} alt="birtdayCard" id={i.id} height="150" width="150" />
+      )
+    }
+    return(
+      img
+    )
+  })
+
   
-  console.log(images)
+  //Store img selected in LOCALSTORAGE
+  //Does not work
   function handleClick(e) {
     console.log(e.target.currentSrc)
-
-    // e.preventDefault();
-    console.log('The link was clicked.');
+    let imgurl = e.target.currentSrc
+    let imgurl1 = JSON.stringify(imgurl)
+    let img2 = JSON.parse(imgurl1)
+    localStorage.setItem = ("img", img2)
   }
 
+
+
+
   return (
-    <div>
-      <h1>Home</h1>
-      <div class="column">
+    <div class="centerDiv">
+      &nbsp;
+      &nbsp;
+      <h3>Christmas Caring</h3>
+      <div class="column" id="Christmas">
         <div class="row">
-          <NavLink to="/cards" onClick={handleClick}>{images}</NavLink>
+          <NavLink to="/cards" onClick={handleClick}>{imagesChristmas}</NavLink>
+        </div>
+      </div>  
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <h3>Birthday Besties</h3>
+      <div class="column" id="Birthday">
+        <div class="row">
+          <NavLink to="/cards" onClick={handleClick} >{imagesBirthday}</NavLink>
         </div>
       </div>
     </div>
@@ -53,7 +88,3 @@ function Home() {
  
 export default Home;
 
-
-//////////////////////////////////  START ON LINE 47  ///////////////////////////////////////////////
-// #1 WHY IS NAV NOT GOING TO "Greting Card" Page? due to previos prevent defualt()
-// #2 Restate img to show on Greeting Card Page to reflect what which image was clicked on HOME page as seen in Function HandleClick console.log

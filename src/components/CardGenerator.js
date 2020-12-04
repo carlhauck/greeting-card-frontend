@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react"
 import TextEditor from "./TextEditor"
 import IconRotate from "./IconRotate"
 import IconDownload from "./IconDownload"
+import Home from "./Home"
 
 function CardGenerator() {
   const [state, setState] = useState({
@@ -34,7 +35,8 @@ function CardGenerator() {
 
   const cardImg = useRef()
   const cardCanvas = useRef()
-
+  console.log(localStorage.getItem('img'))
+  
   useEffect(() => {
     setState(state => ({
       ...state,
@@ -43,14 +45,16 @@ function CardGenerator() {
     }))
   }, [state.randomImg])
 
+
+
   function handleChange(e) {
     const value = e.target.value;
     setState({
       ...state,
       [e.target.name]: value
     });
-
   }
+
 
   function handleImgChange(e) {
     e.preventDefault()
