@@ -14,14 +14,14 @@ import './fonts.css';
 function App() {
   return (
     <BrowserRouter>
-    <div>
-      <Header component={Navigation} /> 
-      <Switch>
-        <Route path="/" component={Home} exact/>
-        <Route path="/cards" component={CardGenerator}/>
-      </Switch>
-    </div> 
-  </BrowserRouter>
+      <div>
+        <Header component={Navigation} />
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/create" component={CardGenerator} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   )
 }
 // previous App.js function:
