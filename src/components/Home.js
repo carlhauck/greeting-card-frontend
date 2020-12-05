@@ -97,37 +97,37 @@ function Home() {
       <h3>Animals</h3>
       <div className="category-section" id="Birthday">
         <div className="category-row">
-          <NavLink to="/cards" onClick={handleClick} >{imagesAnimals}</NavLink>
+          <NavLink to="/create" onClick={handleClick} >{imagesAnimals}</NavLink>
         </div>
       </div>
       <h3>Birthday</h3>
       <div className="category-section" id="Birthday">
         <div className="category-row">
-          <NavLink to="/cards" onClick={handleClick} >{imagesBirthday}</NavLink>
+          <NavLink to="/create" onClick={handleClick} >{imagesBirthday}</NavLink>
         </div>
       </div>
       <h3>Christmas</h3>
       <div className="category-section" id="Christmas">
         <div className="category-row">
-          <NavLink to="/cards" onClick={handleClick}>{imagesChristmas}</NavLink>
+          <NavLink to="/create" onClick={handleClick}>{imagesChristmas}</NavLink>
         </div>
       </div>
       <h3>Easter</h3>
       <div className="category-section" id="Easter">
         <div className="category-row">
-          <NavLink to="/cards" onClick={handleClick}>{imagesEaster}</NavLink>
+          <NavLink to="/create" onClick={handleClick}>{imagesEaster}</NavLink>
         </div>
       </div>
       <h3>Sympathy</h3>
       <div className="category-section" id="Other">
         <div className="category-row">
-          <NavLink to="/cards" onClick={handleClick}>{imagesSympathy}</NavLink>
+          <NavLink to="/create" onClick={handleClick}>{imagesSympathy}</NavLink>
         </div>
       </div>
       <h3>Other</h3>
       <div className="category-section" id="Other">
         <div className="category-row">
-          <NavLink to="/cards" onClick={handleClick}>{imagesOther}</NavLink>
+          <NavLink to="/create" onClick={handleClick}>{imagesOther}</NavLink>
         </div>
       </div>
     </div>
