@@ -9,7 +9,7 @@ body {
   background-color: #FFD7D6;
 }
 
-button.img-button {
+.img-button {
   display: block;
   border: none;
   background-color: #FFEEEE;
@@ -18,24 +18,20 @@ button.img-button {
   cursor: pointer;
 }
 
-button.img-button:hover {
+.img-button:hover {
   background-color: #fff5f5;
 }
 
-button.img-button:active {
-  outline: none;
-}
-
-button.img-button svg g, button.img-button svg polygon {
+.img-button svg g, .img-button svg polygon {
   fill: #FF688B;
   stroke: #FF688B;
 }
 
-button.img-button svg path {
+.img-button svg path {
   stroke: #FF688B;
 }
 
-button.img-button-arrow svg g path {
+.img-button-arrow svg g path {
   fill: #FF688B;
 }
 

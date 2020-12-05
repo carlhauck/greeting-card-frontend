@@ -102,11 +102,14 @@ function CardGenerator() {
     }
   }
 
-  async function downloadImg(e) {
+  async function downloadImg() {
 
     const fonts = {
       'lora': "Lora-Regular",
-      'mountains': "MountainsofChristmas-Bold"
+      'mountains': "MountainsofChristmas-Bold",
+      'billion-dreams': "BillionDreams",
+      'brightsome': "Brightsome",
+      'cormorant-garamond': "CormorantGaramond-Bold"
     }
 
     // Handles text wrap
@@ -202,13 +205,14 @@ function CardGenerator() {
           <button type="button" className="img-button img-button-arrow" value={"right"} onClick={handleImgChange}>
             <IconRightArrow />
           </button>
-          <button type="button" className="img-button"
+          {/* Needs to remain an a tag instead of a button */}
+          <a type="button" className="img-button"
             id="download"
             href=""
             download="download.png"
             onClick={downloadImg}>
             <IconDownload />
-          </button>
+          </a>
         </form>
       </div>
 

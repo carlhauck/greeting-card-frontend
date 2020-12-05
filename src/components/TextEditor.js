@@ -35,7 +35,7 @@ function TextEditor(props) {
 
       {/* font select */}
       <div>
-        <label class="toolicon" htmlFor={locationY + "Font"}>
+        <label className="toolicon" htmlFor={locationY + "Font"}>
           <IconFont />
         </label>
         <select
@@ -54,7 +54,7 @@ function TextEditor(props) {
 
       {/* color select */}
       <div>
-        <label class="toolicon" htmlFor={locationY + "FontColor"}>
+        <label className="toolicon" htmlFor={locationY + "FontColor"}>
           <IconColor />
         </label>
         <input

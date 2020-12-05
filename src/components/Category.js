@@ -37,8 +37,9 @@ function Category(props) {
         {props.allCardImgs.map(i => {
           let img
           if (i.category === props.name) {
-            return img = <div><NavLink to="/create"><img className="card-preview-img" onClick={props.handleClick} src={i.url} alt={i.name} key={i} id={i.id} /></NavLink></div>
+            img = <div><NavLink to="/create"><img className="card-preview-img" onClick={props.handleClick} src={i.url} alt={i.name} key={i} id={i.id} /></NavLink></div>
           }
+          return img
         })}
       </Carousel>
     </div>
