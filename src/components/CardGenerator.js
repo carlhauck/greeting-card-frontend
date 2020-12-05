@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 import TextEditor from "./TextEditor"
 import IconRotate from "./IconRotate"
 import IconDownload from "./IconDownload"
+import IconLeftArrow from "./IconLeftArrow"
+import IconRightArrow from "./IconRightArrow"
 
 function CardGenerator() {
   const [state, setState] = useState({
@@ -182,11 +184,11 @@ function CardGenerator() {
           <button type="button" className="img-button" onClick={handleImgChange}>
             <IconRotate />
           </button>
-          <button type="button" className="img-button">
-            <IconRotate />
+          <button type="button" className="img-button img-button-arrow">
+            <IconLeftArrow />
           </button>
-          <button type="button" className="img-button">
-            <IconRotate />
+          <button type="button" className="img-button img-button-arrow">
+            <IconRightArrow />
           </button>
           <button type="button" className="img-button"
             id="download"

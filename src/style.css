@@ -35,6 +35,10 @@ button.img-button svg path {
   stroke: #FF688B;
 }
 
+button.img-button-arrow svg g path {
+  fill: #FF688B;
+}
+
 .card-preview-img {
   height: 250px;
   width: 200px;
