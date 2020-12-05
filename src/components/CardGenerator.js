@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react"
 import TextEditor from "./TextEditor"
 import IconRotate from "./IconRotate"
 import IconDownload from "./IconDownload"
@@ -41,9 +41,6 @@ function CardGenerator() {
         localStorage.removeItem('img')
       );
   }, [])
-
-  const cardImg = useRef()
-  const cardCanvas = useRef()
 
   window.addEventListener("resize", resizeCanvas);
 
@@ -196,9 +193,9 @@ function CardGenerator() {
       </div>
 
       <div className="item meme">
-        <canvas ref={cardCanvas} id="card-canvas" width={state.canvasWidth} height={state.canvasHeight} style={{ position: 'absolute' }}>
+        <canvas id="card-canvas" width={state.canvasWidth} height={state.canvasHeight} style={{ position: 'absolute' }}>
         </canvas>
-        <img ref={cardImg} id="card-image" crossOrigin="Anonymous" src={state.randomImg} alt="" />
+        <img id="card-image" crossOrigin="Anonymous" src={state.randomImg} alt="" />
         <h2 id="top-text" className={`top ${state.topFont}`} style={{ color: `${state.topFontColor}`, fontSize: `${state.topFontSize}` }}>{state.topText}</h2>
         <h2 id="bottom-text" className={`bottom ${state.bottomFont}`} style={{ color: `${state.bottomFontColor}`, fontSize: `${state.bottomFontSize}` }}>{state.bottomText}</h2>
       </div>
