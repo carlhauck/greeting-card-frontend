@@ -176,19 +176,19 @@ function CardGenerator() {
 
   return (
     <div className="container">
-      <div className="item" style={{ justifyItems: "center" }}>
+      <div className="item">
         <p className="section-header">image</p>
         <form className="meme-form">
           <button type="button" className="img-button" onClick={handleImgChange}>
             <IconRotate />
           </button>
-          <a type="button" className="img-button"
+          <button type="button" className="img-button"
             id="download"
             href=""
             download="download.png"
             onClick={downloadImg}>
             <IconDownload />
-          </a>
+          </button>
         </form>
       </div>
 
