@@ -46,6 +46,7 @@ function TextEditor(props) {
           onChange={props.handleChange}>
           <option value="lora">Lora</option>
           <option value="mountains">Mountains of Christmas</option>
+          <option value="billion-dreams">Mountains of Christmas</option>
         </select>
       </div>
 
@@ -66,27 +67,33 @@ function TextEditor(props) {
 
       {/* size select */}
       <div className="size-selector">
-        <label class="toolicon" style={{ color: "#30659B" }} htmlFor={locationY + "FontSize"}>
+        <label className="toolicon" style={{ color: "#30659B" }} htmlFor={locationY + "FontSize"}>
           <IconFontSize />
           {/* {props.fontSize} */}
         </label>
+
         <button
+          type="button"
           style={{ marginLeft: 10 }}
+          name={locationY + "FontSize"}
+          value={incrementedSize}
+          onClick={props.handleChange}>
+          <span className="material-icons">
+            remove
+          </span>
+        </button>
+
+        <button
           type="button"
           name={locationY + "FontSize"}
           value={decrementedSize}
           onClick={props.handleChange}>
-          -
-        </button>
-        <button
-          type="button"
-          name={locationY + "FontSize"}
-          value={incrementedSize}
-          onClick={props.handleChange}>
-          +
+          <span className="material-icons">
+            add
+          </span>
         </button>
       </div>
-    </div>
+    </div >
   )
 }
 

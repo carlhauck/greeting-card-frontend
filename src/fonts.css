@@ -1,3 +1,5 @@
+/* CARD FONT  */
+
 @font-face {
   font-family: "Lora-Regular";
   src: url("./fonts/Lora-Regular.ttf");
@@ -11,6 +13,30 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "BillionDreams";
+  src: url("./fonts/BillionDreams_PERSONAL.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Brightsome";
+  src: url("./fonts/Brightsome.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CormorantGaramond-Bold";
+  src: url("./fonts/CormorantGaramond-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* APP FONT */
 
 @font-face {
   font-family: "Poppins-Black";
@@ -91,6 +117,18 @@
 
 .nunito {
   font-family: "Nunito-Regular";
+}
+
+.billion-dreams {
+  font-family: "BillionDreams";
+}
+
+.brightsome {
+  font-family: "Brightsome";
+}
+
+.cormorant-garamond {
+  font-family: "CormorantGaramond-Bold";
 }
 
 .poppins-100 {
