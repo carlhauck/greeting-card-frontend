@@ -15,7 +15,7 @@ function CardGenerator() {
     bottomFont: 'mountains',
     bottomFontColor: '#ffffff',
     bottomFontSize: "60px",
-    randomImg: "",
+    displayImg: "",
     allCardImgs: [],
     canvasWidth: "",
     canvasHeight: "",
@@ -36,7 +36,7 @@ function CardGenerator() {
         setState(state => ({
           ...state,
           allCardImgs: images,
-          randomImg: selectedImg
+          displayImg: selectedImg
         }));
       })
       .then(() =>
@@ -63,7 +63,7 @@ function CardGenerator() {
         canvasHeight: `${image.height}px`
       }))
     }
-  }, [state.randomImg])
+  }, [state.displayImg])
 
   function resizeCanvas() {
     let image = document.getElementById('card-image');
@@ -85,9 +85,21 @@ function CardGenerator() {
 
   function handleImgChange(e) {
     e.preventDefault()
-    const randNum = Math.floor(Math.random() * state.allCardImgs.length)
-    const randCardImg = state.allCardImgs[randNum].url
-    setState({ ...state, randomImg: randCardImg })
+    if (e.currentTarget.value === "random") {
+      const randNum = Math.floor(Math.random() * state.allCardImgs.length)
+      const randCardImg = state.allCardImgs[randNum].url
+      setState({ ...state, displayImg: randCardImg })
+    } else {
+      const currentImg = state.allCardImgs.find(img => img.url === state.displayImg)
+      const currentImgIndex = state.allCardImgs.indexOf(currentImg)
+      if (e.currentTarget.value === "left") {
+        const prevImageUrl = state.allCardImgs[currentImgIndex - 1].url
+        setState({ ...state, displayImg: prevImageUrl })
+      } else if (e.currentTarget.value === "right") {
+        const nextImageUrl = state.allCardImgs[currentImgIndex + 1].url
+        setState({ ...state, displayImg: nextImageUrl })
+      }
+    }
   }
 
   async function downloadImg(e) {
@@ -181,13 +193,13 @@ function CardGenerator() {
       <div className="item">
         <p className="section-header">image</p>
         <form className="meme-form">
-          <button type="button" className="img-button" onClick={handleImgChange}>
+          <button type="button" className="img-button" value={"random"} onClick={handleImgChange}>
             <IconRotate />
           </button>
-          <button type="button" className="img-button img-button-arrow">
+          <button type="button" className="img-button img-button-arrow" value={"left"} onClick={handleImgChange}>
             <IconLeftArrow />
           </button>
-          <button type="button" className="img-button img-button-arrow">
+          <button type="button" className="img-button img-button-arrow" value={"right"} onClick={handleImgChange}>
             <IconRightArrow />
           </button>
           <button type="button" className="img-button"
@@ -203,7 +215,7 @@ function CardGenerator() {
       <div className="item meme">
         <canvas id="card-canvas" width={state.canvasWidth} height={state.canvasHeight} style={{ position: 'absolute' }}>
         </canvas>
-        <img id="card-image" crossOrigin="Anonymous" src={state.randomImg} alt="" />
+        <img id="card-image" crossOrigin="Anonymous" src={state.displayImg} alt="" />
         <h2 id="top-text" className={`top ${state.topFont}`} style={{ color: `${state.topFontColor}`, fontSize: `${state.topFontSize}` }}>{state.topText}</h2>
         <h2 id="bottom-text" className={`bottom ${state.bottomFont}`} style={{ color: `${state.bottomFontColor}`, fontSize: `${state.bottomFontSize}` }}>{state.bottomText}</h2>
       </div>
