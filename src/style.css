@@ -40,8 +40,29 @@ button.img-button svg path {
   overflow: hidden;
 }
 
-.category-row {
-  text-align: center;
+.category-name {
+  color: #A168D8;
+  font-family: 'Poppins-Medium';
+  font-size: 1.2em;
+  margin-block-start: 1.2em;
+  margin-block-end: 0.7em;
+}
+
+.navbar {
+  padding-left: 3.5em;
+  padding-top: 0.9em;
+}
+
+.navbar-item {
+  color: #A168D8;
+  font-family: 'Poppins-Regular';
+  font-size: 1em;
+  padding-right: 2.2em;
+  text-decoration: none;
+}
+
+.navbar-item:hover {
+  color: #7A42BB;
 }
 
 .container {
@@ -72,9 +93,9 @@ header > img {
 }
 
 header > p {
-  color: #A168D8;
+  color: #7A42BB;
   font-size: 42px;
-  margin-left: 60px;
+  margin-left: 15px;
 }
 
 input[type="text"] {
@@ -247,3 +268,12 @@ select[multiple] option {
   border: 0;
 }
 
+@media (min-width: 768px) {
+  .container-home {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+  header > p {
+    margin-left: 60px;
+  }
+}

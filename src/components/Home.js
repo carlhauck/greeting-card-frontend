@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import Category from "./Category"
 
-
 function Home() {
   const [state, setState] = useState({
     allCardImgs: [],
