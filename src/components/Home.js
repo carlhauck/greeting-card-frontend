@@ -1,6 +1,3 @@
-//////////////////////////////////  TO DO  ///////////////////////////////////////////////
-// - Display Image on Greeting Card Page to reflect which image was clicked on HOME page
-
 import React, { useState, useEffect } from "react"
 import { NavLink } from 'react-router-dom';
 
@@ -22,112 +19,98 @@ function Home() {
       })
   }, [])
 
-  // Animals cards
-  const imagesAnimals = state.allCardImgs.map(i => {
-    let img = ''
-    if (i.category === "animals") {
-      return (
-        img = <img className="card-preview-img" src={i.url} alt="animalCard" key={i.id} id={i.id} />
-      )
-    }
-    return (
-      img
-    )
-  })
-  // Birthday cards
-  const imagesBirthday = state.allCardImgs.map(i => {
-    let img = ''
-    if (i.category === "birthday") {
-      return (
-        img = <img className="card-preview-img" src={i.url} alt="birthdayCard" key={i.id} id={i.id} />
-      )
-    }
-    return (
-      img
-    )
-  })
-  // Christmas cards
-  const imagesChristmas = state.allCardImgs.map(i => {
-    let img = ''
-    if (i.category === "christmas") {
-      img = <img className="card-preview-img" src={i.url} alt="christmasCard" key={i.id} id={i.id} />
-    }
-    return (
-      img
-    )
-  })
-  // Easter cards
-  const imagesEaster = state.allCardImgs.map(i => {
-    let img = ''
-    if (i.category === "easter") {
-      img = <img className="card-preview-img" src={i.url} alt="easterCard" key={i.id} id={i.id} />
-    }
-    return (
-      img
-    )
-  })
-  // Other cards
-  const imagesOther = state.allCardImgs.map(i => {
-    let img = ''
-    if (i.category === "other") {
-      img = <img className="card-preview-img" src={i.url} alt="otherCard" key={i.id} id={i.id} />
-    }
-    return (
-      img
-    )
-  })
-  // Sympathy cards
-  const imagesSympathy = state.allCardImgs.map(i => {
-    let img = ''
-    if (i.category === "sympathy") {
-      img = <img className="card-preview-img" src={i.url} alt="sympathyCard" key={i.id} id={i.id} />
-    }
-    return (
-      img
-    )
-  })
-
   function handleClick(e) {
     localStorage.setItem("img", e.target.src)
   }
+
+  // Animals cards
+  const imagesAnimals = state.allCardImgs.map(i => {
+    let img
+    if (i.category === "animals") {
+      img = <NavLink to="/create"><img className="card-preview-img" onClick={handleClick} src={i.url} alt="animalsCard" key={i.id} id={i.id} /></NavLink>
+    }
+    return img
+  })
+  // Birthday cards
+  const imagesBirthday = state.allCardImgs.map(i => {
+    let img
+    if (i.category === "birthday") {
+      return (
+        img = <NavLink to="/create"><img className="card-preview-img" onClick={handleClick} src={i.url} alt="birthdayCard" key={i.id} id={i.id} /></NavLink>
+      )
+    }
+    return img
+  })
+  // Christmas cards
+  const imagesChristmas = state.allCardImgs.map(i => {
+    let img
+    if (i.category === "christmas") {
+      img = <NavLink to="/create"><img className="card-preview-img" onClick={handleClick} src={i.url} alt="christmasCard" key={i.id} id={i.id} /></NavLink>
+    }
+    return img
+  })
+  // Easter cards
+  const imagesEaster = state.allCardImgs.map(i => {
+    let img
+    if (i.category === "easter") {
+      img = <NavLink to="/create"><img className="card-preview-img" onClick={handleClick} src={i.url} alt="easterCard" key={i.id} id={i.id} /></NavLink>
+    }
+    return img
+  })
+  // Other cards
+  const imagesOther = state.allCardImgs.map(i => {
+    let img
+    if (i.category === "other") {
+      img = <NavLink to="/create"><img className="card-preview-img" onClick={handleClick} src={i.url} alt="otherCard" key={i.id} id={i.id} /></NavLink>
+    }
+    return img
+  })
+  // Sympathy cards
+  const imagesSympathy = state.allCardImgs.map(i => {
+    let img
+    if (i.category === "sympathy") {
+      img = <NavLink to="/create"><img className="card-preview-img" onClick={handleClick} src={i.url} alt="sympathyCard" key={i.id} id={i.id} /></NavLink>
+    }
+    return img
+  })
 
 
   return (
     <div className="container-home">
       <h3>Animals</h3>
-      <div className="category-section" id="Birthday">
+      <div className="category-section" id="animals">
         <div className="category-row">
-          <NavLink to="/create" onClick={handleClick} >{imagesAnimals}</NavLink>
+          {imagesAnimals}
         </div>
       </div>
       <h3>Birthday</h3>
-      <div className="category-section" id="Birthday">
+      <div className="category-section" id="birthday">
         <div className="category-row">
-          <NavLink to="/create" onClick={handleClick} >{imagesBirthday}</NavLink>
+          {imagesBirthday}
         </div>
       </div>
       <h3>Christmas</h3>
-      <div className="category-section" id="Christmas">
+      <div className="category-section" id="christmas">
         <div className="category-row">
-          <NavLink to="/create" onClick={handleClick}>{imagesChristmas}</NavLink>
+          {imagesChristmas}
         </div>
       </div>
       <h3>Easter</h3>
-      <div className="category-section" id="Easter">
+      <div className="category-section" id="easter">
         <div className="category-row">
-          <NavLink to="/create" onClick={handleClick}>{imagesEaster}</NavLink>
+          {imagesEaster}
         </div>
       </div>
       <h3>Sympathy</h3>
-      <div className="category-section" id="Other">
+      <div className="category-section" id="sympathy">
         <div className="category-row">
-          <NavLink to="/create" onClick={handleClick}>{imagesSympathy}</NavLink>
+          {imagesSympathy}
         </div>
       </div>
       <h3>Other</h3>
-      <div className="category-section" id="Other">
+      <div className="category-section" id="other">
         <div className="category-row">
-          <NavLink to="/create" onClick={handleClick}>{imagesOther}</NavLink>
+          {imagesOther}
         </div>
       </div>
     </div>
