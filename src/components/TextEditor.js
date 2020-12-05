@@ -78,7 +78,7 @@ function TextEditor(props) {
           type="button"
           style={{ marginLeft: 10 }}
           name={locationY + "FontSize"}
-          value={incrementedSize}
+          value={decrementedSize}
           onClick={props.handleChange}>
           <span className="material-icons">
             remove
@@ -88,7 +88,7 @@ function TextEditor(props) {
         <button
           type="button"
           name={locationY + "FontSize"}
-          value={decrementedSize}
+          value={incrementedSize}
           onClick={props.handleChange}>
           <span className="material-icons">
             add

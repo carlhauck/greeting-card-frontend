@@ -75,10 +75,10 @@ function CardGenerator() {
   }
 
   function handleChange(e) {
-    const value = e.target.value;
+    const value = e.currentTarget.value;
     setState({
       ...state,
-      [e.target.name]: value
+      [e.currentTarget.name]: value
     });
   }
 
