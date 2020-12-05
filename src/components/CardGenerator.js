@@ -45,15 +45,35 @@ function CardGenerator() {
   const cardImg = useRef()
   const cardCanvas = useRef()
 
+  window.addEventListener("resize", resizeCanvas);
+
   useEffect(() => {
-    setState(state => ({
-      ...state,
-      canvasWidth: `${cardImg.current.width}px`,
-      canvasHeight: `${cardImg.current.height}px`
-    }))
+    let image = document.getElementById('card-image');
+    if (image.height === 0) {
+      setTimeout(() => {
+        setState(state => ({
+          ...state,
+          canvasWidth: `${image.width}px`,
+          canvasHeight: `${image.height}px`
+        }))
+      }, 500);
+    } else {
+      setState(state => ({
+        ...state,
+        canvasWidth: `${image.width}px`,
+        canvasHeight: `${image.height}px`
+      }))
+    }
   }, [state.randomImg])
 
-
+  function resizeCanvas() {
+    let image = document.getElementById('card-image');
+    setState(state => ({
+      ...state,
+      canvasWidth: `${image.width}px`,
+      canvasHeight: `${image.height}px`
+    }))
+  }
 
   function handleChange(e) {
     const value = e.target.value;
