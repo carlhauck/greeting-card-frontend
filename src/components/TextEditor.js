@@ -46,7 +46,9 @@ function TextEditor(props) {
           onChange={props.handleChange}>
           <option value="lora">Lora</option>
           <option value="mountains">Mountains of Christmas</option>
-          <option value="billion-dreams">Mountains of Christmas</option>
+          <option value="billion-dreams">Billion Dreams</option>
+          <option value="brightsome">Brightsome</option>
+          <option value="cormorant-garamond">Cormorant Garamond</option>
         </select>
       </div>
 
