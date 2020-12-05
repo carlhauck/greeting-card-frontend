@@ -38,8 +38,9 @@ button.img-button svg path {
   height: 250px;
   width: 200px;
   overflow: hidden;
-  box-shadow: 0px 4px 18px -5px rgba(0,0,0,.20);
-  border-radius: 7px;
+  box-shadow: 0px 4px 6px -1px rgba(0,0,0,.20);
+  border-radius: 6px;
+  margin-bottom: 6px;
 }
 
 .category-name {
