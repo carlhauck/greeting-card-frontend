@@ -74,6 +74,7 @@ button.img-button svg path {
   align-items: center;
   grid-template-columns: 1fr 2fr 1fr;
   column-gap: 2rem;
+  margin-left: 60px;
 }
 
 .container-home {
@@ -164,12 +165,16 @@ input[type="color"]::-webkit-color-swatch-wrapper {
   width: 90%;
   margin: 20px auto;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .meme-form > input {
   width: 45%;
   height: 40px;
+}
+
+.meme-form button {
+  margin-right: 10px;
 }
 
 .meme-form > input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -256,6 +261,7 @@ select[multiple] option {
   font-size: 0.8em;
   color: #30659B;
   margin: 0 0 0.5em 0;
+
 }
 
 .text-editor input, 
@@ -270,6 +276,12 @@ select[multiple] option {
 .text-editor input {
   border-radius: 3px;
   border: 0;
+}
+
+.toolicon {
+  background-color: rgb(255, 177, 177);
+  padding: 8px;
+  border-radius: 50%;
 }
 
 @media (min-width: 768px) {

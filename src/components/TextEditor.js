@@ -35,7 +35,7 @@ function TextEditor(props) {
 
       {/* font select */}
       <div>
-        <label htmlFor={locationY + "Font"}>
+        <label class="toolicon" htmlFor={locationY + "Font"}>
           <IconFont />
         </label>
         <select
@@ -51,7 +51,7 @@ function TextEditor(props) {
 
       {/* color select */}
       <div>
-        <label htmlFor={locationY + "FontColor"}>
+        <label class="toolicon" htmlFor={locationY + "FontColor"}>
           <IconColor />
         </label>
         <input
@@ -66,8 +66,9 @@ function TextEditor(props) {
 
       {/* size select */}
       <div className="size-selector">
-        <label style={{ color: "#30659B" }} htmlFor={locationY + "FontSize"}>
-          <IconFontSize /> {props.fontSize}
+        <label class="toolicon" style={{ color: "#30659B" }} htmlFor={locationY + "FontSize"}>
+          <IconFontSize />
+          {/* {props.fontSize} */}
         </label>
         <button
           style={{ marginLeft: 10 }}
