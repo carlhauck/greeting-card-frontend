@@ -21,11 +21,11 @@ function Category(props) {
   const responsive = {
     largeDevice: {
       breakpoint: { max: 8000, min: 768 },
-      items: Math.floor((windowWidth - 120) / 200)
+      items: Math.floor((windowWidth - 120) / 200) - 0.05
     },
     smallDevice: {
       breakpoint: { max: 768, min: 0 },
-      items: Math.floor((windowWidth - 30) / 200)
+      items: Math.floor((windowWidth - 30) / 200) - 0.05
     },
   };
 
