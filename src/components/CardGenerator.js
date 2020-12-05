@@ -182,6 +182,12 @@ function CardGenerator() {
           <button type="button" className="img-button" onClick={handleImgChange}>
             <IconRotate />
           </button>
+          <button type="button" className="img-button">
+            <IconRotate />
+          </button>
+          <button type="button" className="img-button">
+            <IconRotate />
+          </button>
           <button type="button" className="img-button"
             id="download"
             href=""
