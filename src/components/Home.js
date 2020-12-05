@@ -27,7 +27,7 @@ function Home() {
     let img = ''
     if (i.category === "animals") {
       return (
-        img = <img src={i.url} alt="animalCard" key={i.id} id={i.id} height="250" width="200" />
+        img = <img className="card-preview-img" src={i.url} alt="animalCard" key={i.id} id={i.id} />
       )
     }
     return (
@@ -39,7 +39,7 @@ function Home() {
     let img = ''
     if (i.category === "birthday") {
       return (
-        img = <img src={i.url} alt="birthdayCard" key={i.id} id={i.id} height="250" width="200" />
+        img = <img className="card-preview-img" src={i.url} alt="birthdayCard" key={i.id} id={i.id} />
       )
     }
     return (
@@ -50,7 +50,7 @@ function Home() {
   const imagesChristmas = state.allCardImgs.map(i => {
     let img = ''
     if (i.category === "christmas") {
-      img = <img src={i.url} alt="christmasCard" key={i.id} id={i.id} height="250" width="200" />
+      img = <img className="card-preview-img" src={i.url} alt="christmasCard" key={i.id} id={i.id} />
     }
     return (
       img
@@ -60,7 +60,7 @@ function Home() {
   const imagesEaster = state.allCardImgs.map(i => {
     let img = ''
     if (i.category === "easter") {
-      img = <img src={i.url} alt="easterCard" key={i.id} id={i.id} height="250" width="200" />
+      img = <img className="card-preview-img" src={i.url} alt="easterCard" key={i.id} id={i.id} />
     }
     return (
       img
@@ -70,7 +70,7 @@ function Home() {
   const imagesOther = state.allCardImgs.map(i => {
     let img = ''
     if (i.category === "other") {
-      img = <img src={i.url} alt="otherCard" key={i.id} id={i.id} height="250" width="200" />
+      img = <img className="card-preview-img" src={i.url} alt="otherCard" key={i.id} id={i.id} />
     }
     return (
       img
@@ -80,21 +80,16 @@ function Home() {
   const imagesSympathy = state.allCardImgs.map(i => {
     let img = ''
     if (i.category === "sympathy") {
-      img = <img src={i.url} alt="sympathyCard" key={i.id} id={i.id} height="250" width="200" />
+      img = <img className="card-preview-img" src={i.url} alt="sympathyCard" key={i.id} id={i.id} />
     }
     return (
       img
     )
   })
 
-
-  //Store img selected in LOCALSTORAGE
-  //Does not work
   function handleClick(e) {
     localStorage.setItem("img", e.target.src)
   }
-
-
 
 
   return (

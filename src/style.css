@@ -9,13 +9,61 @@ body {
   background-color: #FFD7D6;
 }
 
+button.img-button {
+  display: block;
+  border: none;
+  background-color: #FFEEEE;
+  border-radius: 4px;
+  padding: 1em;
+}
+
+button.img-button:hover {
+  background-color: #fff5f5;
+}
+
+button.img-button:active {
+  outline: none;
+}
+
+button.img-button svg g, button.img-button svg polygon {
+  fill: #FF688B;
+  stroke: #FF688B;
+}
+
+button.img-button svg path {
+  stroke: #FF688B;
+}
+
+.card-preview-img {
+  height:250px;
+  width: 200px;
+  overflow: hidden;
+}
+
+.category-row {
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 2fr 1fr;
+  column-gap: 2rem;
+}
+
+.container-home {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 header {
   height: 100px;
   display: flex;
   align-items: center;
   background: #FFD7D6;
-  /* background: -webkit-linear-gradient(to right, #2a0845, #6441A5);
-  background: linear-gradient(to right, #2a0845, #6441A5); */
 }
 
 header > img {
@@ -24,11 +72,28 @@ header > img {
 }
 
 header > p {
-  /* font-family: VT323, monospace; */
-  /* color: whitesmoke; */
   color: #A168D8;
   font-size: 42px;
   margin-left: 60px;
+}
+
+input[type="text"] {
+  padding: 10px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border-radius: 3px;
+  border: 0;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.item {
+  width: 100%;
+  height: 100%;
+  justify-items: center;
 }
 
 .meme {
@@ -48,9 +113,7 @@ header > p {
   transform: translateX(-50%);
   margin: 15px 0;
   padding: 0 5px;
-  /* font-family: impact, sans-serif; */
   font-size: 2em;
-  /* text-transform: uppercase; */
   color: white;
   text-shadow:
       2px 2px 0 #000,
@@ -105,6 +168,13 @@ font-size: 25px;
 text-align: cen
 }
 
+.section-header {
+  display: block;
+  font-family: 'Poppins-Bold';
+  font-size: 1.5em;
+  color: #30659B;
+  margin: 0 0 0.5em 0;
+}
 
 select {
   /* A reset of styles, including removing the default dropdown arrow */
@@ -125,70 +195,25 @@ select {
   position: relative;
 }
 
-
 select[multiple] option {
   background-color: darkorange;
 }
 
-.section-header {
-  display: block;
-  font-family: 'Poppins-Bold';
-  font-size: 1.5em;
-  color: #30659B;
-  margin: 0 0 0.5em 0;
+.size-selector > label{
+  font-family: "Nunito-Regular";
 }
 
-button.img-button {
-  display: block;
+.size-selector > button {
   border: none;
   background-color: #FFEEEE;
   border-radius: 4px;
-  padding: 1em;
+  margin: 0 3px 0 0;
+  padding: 0.5em;
+  color: #30659B;
 }
 
-button.img-button:hover {
-  background-color: #fff5f5;
-}
-
-button.img-button:active {
-  outline: none;
-}
-
-button.img-button svg g, button.img-button svg polygon {
-  fill: #FF688B;
-  stroke: #FF688B;
-}
-
-button.img-button svg path {
-  stroke: #FF688B;
-}
-
-.container {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 1fr 2fr 1fr;
-  column-gap: 2rem;
-}
-
-.container-home {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.category-section {
-}
-
-.category-row {
-  text-align: center;
-}
-
-.item {
-  width: 100%;
-  height: 100%;
-  justify-items: center;
+.size-selector > button:hover {
+  background-color: #ffdede;
 }
 
 .text-editor {
@@ -222,42 +247,3 @@ button.img-button svg path {
   border: 0;
 }
 
-input[type="text"] {
-  padding: 10px;
-}
-
-input[type="color"]::-webkit-color-swatch {
-  border-radius: 3px;
-  border: 0;
-}
-
-input[type="color"]::-webkit-color-swatch-wrapper {
-  padding: 0;
-}
-
-.size-selector > label{
-  font-family: "Nunito-Regular";
-}
-
-.size-selector > button {
-  border: none;
-  background-color: #FFEEEE;
-  border-radius: 4px;
-  margin: 0 3px 0 0;
-  padding: 0.5em;
-  color: #30659B;
-}
-
-.size-selector > button:hover {
-  background-color: #ffdede;
- 
-}
-
-/* #img-canvas {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%), translateY(-50%);
-} */
