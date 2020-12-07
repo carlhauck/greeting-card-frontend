@@ -49,6 +49,10 @@ function TextEditor(props) {
           <option value="billion-dreams">Billion Dreams</option>
           <option value="brightsome">Brightsome</option>
           <option value="cormorant-garamond">Cormorant Garamond</option>
+          <option value="tangerine">Tangerine</option>
+          <option value="coming-soon">Tangerine</option>
+          <option value="josefin-sans">Tangerine</option>
+
         </select>
       </div>
 

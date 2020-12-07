@@ -109,7 +109,10 @@ function CardGenerator() {
       'mountains': "MountainsofChristmas-Bold",
       'billion-dreams': "BillionDreams",
       'brightsome': "Brightsome",
-      'cormorant-garamond': "CormorantGaramond-Bold"
+      'cormorant-garamond': "CormorantGaramond-Bold",
+      'tangerine': "Tangerine-Bold",
+      'coming-soon': "ComingSoon",
+      'josefin-sans': "JosefinSans-Bold",
     }
 
     // Handles text wrap

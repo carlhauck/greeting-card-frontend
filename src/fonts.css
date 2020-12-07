@@ -35,6 +35,27 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Tangerine-Bold";
+  src: url("./fonts/Tangrine-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ComingSoon";
+  src: url("./fonts/ComingSoon-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JosefinSans-Bold";
+  src: url("./fonts/JosefinSans-VariableFont_wght.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
 
 /* APP FONT */
 
@@ -129,6 +150,18 @@
 
 .cormorant-garamond {
   font-family: "CormorantGaramond-Bold";
+}
+
+.tangerine {
+  font-family: "Tangerine-Bold";
+}
+
+.coming-soon {
+  font-family: "ComingSoon";
+}
+
+.josefin-sans {
+  font-family: "JosefinSans-Bold"
 }
 
 .poppins-100 {
