@@ -12,7 +12,7 @@ function CardGenerator() {
     topFontColor: '#ffffff',
     topFontSize: "60px",
     bottomText: "",
-    bottomFont: 'mountains',
+    bottomFont: 'lora',
     bottomFontColor: '#ffffff',
     bottomFontSize: "60px",
     displayImg: "",
