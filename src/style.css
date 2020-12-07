@@ -9,6 +9,52 @@ body {
   background-color: #FFD7D6;
 }
 
+.card-preview-img {
+  height: 250px;
+  width: 200px;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px -1px rgba(0,0,0,.20);
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.category-name {
+  color: #A168D8;
+  font-family: 'Poppins-Medium';
+  font-size: 1.2em;
+  margin-block-start: 1.2em;
+  margin-block-end: 0.7em;
+}
+
+.container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(1fr 1fr 1fr);
+  column-gap: 2rem;
+  margin-left: 15px;
+}
+
+.container-home {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+header {
+  height: 16vh;
+  display: flex;
+  align-items: center;
+  background: #FFD7D6;
+}
+
+header > p {
+  color: #7A42BB;
+  font-size: 42px;
+  margin-left: 15px;
+}
+
 .img-button {
   display: block;
   border: none;
@@ -16,6 +62,9 @@ body {
   border-radius: 4px;
   padding: 1em;
   cursor: pointer;
+  margin-right: 12px;
+  width: 62px;
+  text-align: center;
 }
 
 .img-button:hover {
@@ -35,74 +84,6 @@ body {
   fill: #FF688B;
 }
 
-.card-preview-img {
-  height: 250px;
-  width: 200px;
-  overflow: hidden;
-  box-shadow: 0px 4px 6px -1px rgba(0,0,0,.20);
-  border-radius: 6px;
-  margin-bottom: 6px;
-}
-
-.category-name {
-  color: #A168D8;
-  font-family: 'Poppins-Medium';
-  font-size: 1.2em;
-  margin-block-start: 1.2em;
-  margin-block-end: 0.7em;
-}
-
-.navbar {
-  padding-left: 3.5em;
-  padding-top: 0.9em;
-}
-
-.navbar-item {
-  color: #A168D8;
-  font-family: 'Poppins-Regular';
-  font-size: 1em;
-  padding-right: 2.2em;
-  text-decoration: none;
-}
-
-.navbar-item:hover {
-  color: #7A42BB;
-}
-
-.container {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 1fr 2fr 1fr;
-  column-gap: 2rem;
-  margin-left: 60px;
-}
-
-.container-home {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-header {
-  height: 100px;
-  display: flex;
-  align-items: center;
-  background: #FFD7D6;
-}
-
-header > img {
-  height: 80%;
-  margin-left: 10%;
-}
-
-header > p {
-  color: #7A42BB;
-  font-size: 42px;
-  margin-left: 15px;
-}
-
 input[type="text"] {
   padding: 10px;
 }
@@ -120,6 +101,12 @@ input[type="color"]::-webkit-color-swatch-wrapper {
   width: 100%;
   height: 100%;
   justify-items: center;
+}
+
+.material-icons {
+  font-weight: 900;
+  font-size: 12px;
+  margin-top: 3px;
 }
 
 .meme {
@@ -162,40 +149,26 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 }
 
 .meme-form {
-  width: 90%;
+  width: 100%;
   margin: 20px auto;
   display: flex;
-  /* justify-content: space-between; */
 }
 
-.meme-form > input {
-  width: 45%;
-  height: 40px;
+.navbar {
+  padding-left: 3.5em;
+  padding-top: 0.9em;
 }
 
-.meme-form button {
-  margin-right: 10px;
+.navbar-item {
+  color: #A168D8;
+  font-family: 'Poppins-Regular';
+  font-size: 1em;
+  padding-right: 2.2em;
+  text-decoration: none;
 }
 
-.meme-form > input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-font-family: VT323, monospace;
-font-size: 25px;
-text-align: cen
-}
-.meme-form > input::-moz-placeholder { /* Firefox 19+ */
-font-family: VT323, monospace;
-font-size: 25px;
-text-align: cen
-}
-.meme-form > input:-ms-input-placeholder { /* IE 10+ */
-font-family: VT323, monospace;
-font-size: 25px;
-text-align: cen
-}
-.meme-form > input:-moz-placeholder { /* Firefox 18- */
-font-family: VT323, monospace;
-font-size: 25px;
-text-align: cen
+.navbar-item:hover {
+  color: #7A42BB;
 }
 
 .section-header {
@@ -270,7 +243,7 @@ select[multiple] option {
 }
 
 .text-edit-field {
-  width: 250px;
+  width: 300px;
 }
 
 .text-editor input {
@@ -280,22 +253,21 @@ select[multiple] option {
 
 .toolicon {
   background-color: rgb(255, 189, 189);
-  padding: 8px;
+  padding: 8px 8px 7px 8px;
   border-radius: 50%;
 }
 
-.material-icons {
-  font-weight: 900;
-  font-size: 12px;
-  margin-top: 3px;
-}
-
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+  .container {
+    grid-template-columns: 1fr 1.8fr 1.4fr;
+    column-gap: 2.5rem;
+    margin-left: 80px;
+  }
   .container-home {
-    padding-right: 60px;
-    padding-left: 60px;
+    padding-right: 80px;
+    padding-left: 80px;
   }
   header > p {
-    margin-left: 60px;
+    margin-left: 80px;
   }
 }

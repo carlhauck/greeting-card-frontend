@@ -71,7 +71,6 @@ function TextEditor(props) {
       <div className="size-selector">
         <label className="toolicon" style={{ color: "#30659B" }} htmlFor={locationY + "FontSize"}>
           <IconFontSize />
-          {/* {props.fontSize} */}
         </label>
 
         <button
