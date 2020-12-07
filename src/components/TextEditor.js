@@ -13,8 +13,8 @@ function TextEditor(props) {
   let incrementedSize = increment.toString() + "px";
 
   let decrement = Number(props.fontSize.substring(0, props.fontSize.length - 2)) - 1;
-  if (decrement <= 20) {
-    decrement = 20
+  if (decrement <= 30) {
+    decrement = 30
   }
   let decrementedSize = decrement.toString() + "px";
 
