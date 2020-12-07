@@ -50,8 +50,8 @@ function TextEditor(props) {
           <option value="brightsome">Brightsome</option>
           <option value="cormorant-garamond">Cormorant Garamond</option>
           <option value="tangerine">Tangerine</option>
-          <option value="coming-soon">Tangerine</option>
-          <option value="josefin-sans">Tangerine</option>
+          <option value="coming-soon">Coming Soon</option>
+          <option value="josefin-sans">Josefin Sans</option>
 
         </select>
       </div>
