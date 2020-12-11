@@ -23,8 +23,8 @@ body {
 }
 
 .card-preview-img:hover {
-  transform: scale(1.02);
-  box-shadow: 0px 12px 10px -13px rgba(0,0,0,.40);
+  transform: scale(1.007);
+  box-shadow: 0px 11px 10px -13px rgba(0,0,0,.65);
   transition: 0.15s ease-out;
 }
 
