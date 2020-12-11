@@ -33,7 +33,7 @@ function Category(props) {
   return (
     <div className="category-section" id={props.name}>
       <h3 className="category-name">{props.name}</h3>
-      <Carousel responsive={responsive} style="padding-top: 5px;">
+      <Carousel responsive={responsive} class="carousel">
         {props.allCardImgs.map(i => {
           let img
           if (i.category === props.name) {

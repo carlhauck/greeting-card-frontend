@@ -9,6 +9,9 @@ body {
   background-color: #FFD7D6;
 }
 
+.carousel {
+  padding: 14px 0px;
+}
 .card-preview-img {
   height: 250px;
   width: 200px;
