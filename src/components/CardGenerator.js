@@ -22,7 +22,7 @@ function CardGenerator() {
   })
 
   useEffect(() => {
-    fetch("http://localhost:3000/images")
+    fetch(`${process.env.REACT_APP_API_URL}/images`)
       .then(response => response.json())
       .then(response => {
         const images = response
